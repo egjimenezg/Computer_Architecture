@@ -20,7 +20,7 @@ begin
     for i in 0 to 3 generate
       inputWithOptions(i) <= inputB(i) xor option;
       p(i) <= inputA(i) xor inputWithOptions(i);
-		g(i) <= inputA(i) and inputWithOptions(i);
+      g(i) <= inputA(i) and inputWithOptions(i);
       sum_subtraction(i) <= p(i) xor c(i);
       c(i+1) <= g(i) or (p(i) and c(i));
   end generate cycle;
