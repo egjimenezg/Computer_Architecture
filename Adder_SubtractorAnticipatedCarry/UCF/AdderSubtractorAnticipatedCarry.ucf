@@ -1,0 +1,17 @@
+NET "option" LOC = "U9" | IOSTANDARD = "LVCMOS33";
+
+NET "inputA(0)" LOC = "T1" | IOSTANDARD = "LVCMOS33";
+NET "inputA(1)" LOC = "R3" | IOSTANDARD = "LVCMOS33";
+NET "inputA(2)" LOC = "P3" | IOSTANDARD = "LVCMOS33";
+NET "inputA(3)" LOC = "P4" | IOSTANDARD = "LVCMOS33";
+
+NET "inputB(0)" LOC = "U4" | IOSTANDARD = "LVCMOS33";
+NET "inputB(1)" LOC = "V2" | IOSTANDARD = "LVCMOS33";
+NET "inputB(2)" LOC = "U2" | IOSTANDARD = "LVCMOS33";
+NET "inputB(3)" LOC = "T3" | IOSTANDARD = "LVCMOS33";
+
+NET "sum_subtraction(0)" LOC = "R1" | IOSTANDARD = "LVCMOS33";
+NET "sum_subtraction(1)" LOC = "P5" | IOSTANDARD = "LVCMOS33";
+NET "sum_subtraction(2)" LOC = "U1" | IOSTANDARD = "LVCMOS33";
+NET "sum_subtraction(3)" LOC = "R2" | IOSTANDARD = "LVCMOS33";
+NET "cout" LOC = "P2"	| IOSTANDARD = "LVCMOS33";
