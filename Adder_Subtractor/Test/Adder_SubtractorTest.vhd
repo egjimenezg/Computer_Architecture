@@ -6,7 +6,6 @@ END Adder_SubtractorTest;
  
 ARCHITECTURE behavior OF Adder_SubtractorTest IS 
  
--- Component Declaration for the Unit Under Test (UUT)
   COMPONENT Adder_Subtractor PORT(
     inputA : IN  std_logic_vector(3 downto 0);
     inputB : IN  std_logic_vector(3 downto 0);
@@ -15,16 +14,12 @@ ARCHITECTURE behavior OF Adder_SubtractorTest IS
     cout : OUT  std_logic);
   END COMPONENT;
 
-  --Inputs
   signal inputA : std_logic_vector(3 downto 0) := (others => '0');
   signal inputB : std_logic_vector(3 downto 0) := (others => '0');
   signal option : std_logic := '0';
 
-  --Outputs
   signal sum : std_logic_vector(3 downto 0);
   signal cout : std_logic;
-  -- No clocks detected in port list. Replace <clock> below with 
-  -- appropriate port name 
   
 BEGIN
   -- Instantiate the Unit Under Test (UUT)

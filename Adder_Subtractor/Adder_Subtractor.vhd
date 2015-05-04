@@ -18,10 +18,10 @@ begin
   c(0) <= option;
   cycle:
     for i in 0 to 3 generate
-	  inputWithOption(i) <= (inputB(i) xor option);
-     sum(i) <= (inputWithOption(i) xor (inputA(i))) xor c(i);
-	  c(i+1) <= (inputA(i) and inputWithOption(i)) or ((inputA(i) xor inputWithOption(i)) and c(i));
-  end generate cycle;
+      inputWithOption(i) <= (inputB(i) xor option);
+      sum(i) <= (inputWithOption(i) xor (inputA(i))) xor c(i);
+      c(i+1) <= (inputA(i) and inputWithOption(i)) or ((inputA(i) xor inputWithOption(i)) and c(i));
+    end generate cycle;
   cout <= c(4);
 end Behavioral;
 
