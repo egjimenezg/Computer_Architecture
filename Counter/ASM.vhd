@@ -31,6 +31,7 @@ begin
     lb <= '0';
     ea <= '0';
     eb <= '0';
+    ec <= '0';
 
     case currentState is
       when E0 =>
@@ -38,9 +39,10 @@ begin
         if start = '1' then
           nextState <= E1;
         else
-        la <= '1';
+          la <= '1';
           nextState <= E0;
         end if;
+      
       when E1 =>
         ea <= '1';
         if z = '1' then
@@ -51,14 +53,14 @@ begin
           end if;
           nextState <= E1;
         end if;
-     
+
       when E2 =>
         ec <= '1';
-      if(start = '1') then
-        nextState <= E2;
-      else
-        nextState <= E0;       
-      end if;
+        if(start = '1') then
+          nextState <= E2;
+        else
+          nextState <= E0;			 
+        end if;
     end case;
   end process;
 end Behavioral;
