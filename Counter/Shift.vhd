@@ -3,7 +3,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 
---Author: Gamaliel Jiménez
 entity Shift is Port( 
   clock : in STD_LOGIC;
   la : in STD_LOGIC;

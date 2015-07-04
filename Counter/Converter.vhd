@@ -1,4 +1,4 @@
--- Author: Gamaliel JimÃ©nez
+-- Author: Gamaliel Jiménez
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -26,4 +26,5 @@ begin
       when others => convertedNumber <= "0001100";
     end case;
   end process;
+  
 end Behavioral;
