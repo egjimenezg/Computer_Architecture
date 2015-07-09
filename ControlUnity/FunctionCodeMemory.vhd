@@ -21,7 +21,8 @@ architecture Behavioral of FunctionCodeMemory is
                             "00000100010011010011", --NAND
                             "00000100010011000011", --NOR
                             "00000100010001100011", --XNOR
-                            "00000100010011010011"); --NOT 
+                            "00000100010011010011", --NOT 
+                            others => (others => '0'));
                             
 begin
 
