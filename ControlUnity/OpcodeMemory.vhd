@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity OpcodeMemory is
   generic(
     OPCODE_SIZE : integer := 5;
-    INSTRUCTION_SIZE : integer := 20);
+	 INSTRUCTION_SIZE : integer := 20);
   Port(code : in std_logic_vector(OPCODE_SIZE-1 downto 0);
        instruction : out std_logic_vector(INSTRUCTION_SIZE-1 downto 0));
 end OpcodeMemory;
@@ -16,7 +16,7 @@ architecture Behavioral of OpcodeMemory is
   -- MICROINSTRUCTION
   -- SDMP UP DW WPC SR2 SWD SEXT SHE DIR WR SOP1 SOP2 ALU[3] ALU[2] ALU[1] ALU[0] SDMD WD SR LF
   constant memory : rom := ("00001000000001110001", --COMPARISON
-                            "00000000010000000000", --LI
+                            "00000000010000000000", --LI                            
                             "00000100010000001000", --LWI
                             "00001000000000001100", --SWI
                             "00001010000100110100", --SW
@@ -29,11 +29,11 @@ architecture Behavioral of OpcodeMemory is
                             "00000110010111000011", --NORI
                             "00000110010110100011", --XNORI
                             "10010000001100110010", --BEQI									 
-                            "10010000001100000010", --BNEI
-                            "10010000001100000010", --BLTI
-                            "10010000001100000010", --BLETI
-                            "10010000001100000010", --BGTI
-                            "10010000001100000010", --BGETI
+                            "10010000001100110010", --BNEI
+                            "10010000001100110010", --BLTI
+                            "10010000001100110010", --BLETI
+                            "10010000001100110010", --BGTI
+                            "10010000001100110010", --BGETIs
                             "00010000000000000000", --B
                             "01010000000000000000", --CALL
                             "00100000000000000000", --RET
