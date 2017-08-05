@@ -77,31 +77,31 @@ architecture Behavioral of ProgramMemory is
 --      OPCODE_B & "0000" & X"0002",  
   type customArray is array(0 to (2**D)-1) of std_logic_vector(P-1 downto 0);
     constant memory : customArray := (
-	   OPCODE_LI & R0 & X"0017",   --0
-		OPCODE_SWI & R0 & X"000A",  --1
-		
-	   OPCODE_LI & R0 & X"0082",   --2
-      OPCODE_SWI & R0 & X"000B",  --3
-		
-		OPCODE_LI & R0 & X"0046",   --4
-      OPCODE_SWI & R0 & X"000C",  --5
-	
-		OPCODE_LI & R0 & X"0104",   --6
-      OPCODE_SWI & R0 & X"000D",  --7
-		
-		OPCODE_LI & R0 & X"0000",   --8
-		OPCODE_LI & R2 & X"0000",   --9
-		OPCODE_LI & R3 & X"0004",   --10
-		
-		OPCODE_LW & R4 & R2 & X"00A",       --   11 R4 = mem[10+R2]
-      OPCODE_TYPER & R0 & R0 & R4 & "0000" & FUNCTIONCODE_ADD, --12 R0 = R0+R4
-      OPCODE_ADDI & R2 & R2 & X"001",    --13  R2 = R2+1
-      OPCODE_BEQI & R2 & R3 & X"002",  --14 R2==R3
-		OPCODE_B & "0000" & X"000B",     --   15 goto 11
-		OPCODE_TYPER & R0 & R0 & R4 & "0000" & FUNCTIONCODE_SRL, --16
-      OPCODE_SWI & R0 & X"0014",  --17 mem[20] = R0
-		OPCODE_LWI & R7 & X"0014",  --18 R7 = mem[20]
-		OPCODE_B & "0000" & X"0012",     --   19 goto 18
+    OPCODE_LI & R0 & X"0017",   --0
+    OPCODE_SWI & R0 & X"000A",  --1
+    
+    OPCODE_LI & R0 & X"0082",   --2
+    OPCODE_SWI & R0 & X"000B",  --3
+    
+    OPCODE_LI & R0 & X"0046",   --4
+    OPCODE_SWI & R0 & X"000C",  --5
+    
+    OPCODE_LI & R0 & X"0104",   --6
+    OPCODE_SWI & R0 & X"000D",  --7
+    
+    OPCODE_LI & R0 & X"0000",   --8
+    OPCODE_LI & R2 & X"0000",   --9
+    OPCODE_LI & R3 & X"0004",   --10
+    
+    OPCODE_LW & R4 & R2 & X"00A",       --   11 R4 = mem[10+R2]
+    OPCODE_TYPER & R0 & R0 & R4 & "0000" & FUNCTIONCODE_ADD, --12 R0 = R0+R4
+    OPCODE_ADDI & R2 & R2 & X"001",    --13  R2 = R2+1
+    OPCODE_BEQI & R2 & R3 & X"002",  --14 R2==R3
+    OPCODE_B & "0000" & X"000B",     --   15 goto 11
+    OPCODE_TYPER & R0 & R0 & R4 & "0000" & FUNCTIONCODE_SRL, --16
+    OPCODE_SWI & R0 & X"0014",  --17 mem[20] = R0
+    OPCODE_LWI & R7 & X"0014",  --18 R7 = mem[20]
+    OPCODE_B & "0000" & X"0012",     --   19 goto 18
 		
 --    constant memory : customArray := (
 --      OPCODE_LI & R0 & X"0055",   --0
