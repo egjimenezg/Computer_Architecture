@@ -17,7 +17,7 @@ architecture Behavioral of ControlUnity is
   signal functionMemoryOutput,opcodeMemoryOutput : std_logic_vector(19 downto 0);
   signal opcodeInput : std_logic_vector(4 downto 0);
 begin
-  
+
   asmModule:ASM Port Map(
     clock => clock,
     clear => clear,
@@ -38,7 +38,7 @@ begin
     SM => SM,
     SDOPC => SDOPC
   );
-  
+
   functionCodeModule:FunctionCodeMemory Port Map(
     functionCode => functionCode,
     microinstruction => functionMemoryOutput
@@ -55,7 +55,7 @@ begin
   
   stateRegisterModule:StateRegister Port Map(
     clock => clock,
-	 clear => clear,	 
+	 clear => clear,
     lf => lf,
     flags_in => flags,
     equal => EQ,
@@ -82,7 +82,7 @@ begin
     bGreaterThan => BGT,
     bGreaterEqualThan => BGET
   );
-  
+
   OpcodeMemoryInput:process(SDOPC,opcode)
   begin
     if(SDOPC='1') then

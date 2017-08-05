@@ -56,18 +56,18 @@ package ESCOMIPSPackage is
   
   component ControlUnity is 
     Port(clock,clear : in std_logic;
-			functionCode : in std_logic_vector(3 downto 0);
-			opcode : in std_logic_vector(4 downto 0);
-			flags : in std_logic_vector(3 downto 0);
-			lf : in std_logic;
-			s : out std_logic_vector(19 downto 0));
+         functionCode : in std_logic_vector(3 downto 0);
+         opcode : in std_logic_vector(4 downto 0);
+         flags : in std_logic_vector(3 downto 0);
+         lf : in std_logic;
+         s : out std_logic_vector(19 downto 0));
   end component;
   
   component Divider is
     Port(
 	   clock_oscilator,clear : in std_logic;
-      clock : inout std_logic
-	 );
+     clock : inout std_logic
+	  );
   end component;
 end ESCOMIPSPackage;
 

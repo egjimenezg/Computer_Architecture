@@ -20,28 +20,26 @@ begin
   process(clock,clear)
     variable registers : stack_matrix := (others => (others => '0'));
     variable stackPointer : std_logic_vector(2 downto 0);
-  begin    
+  begin
     if(clear='1') then
-	   stackPointer := "000";		
+	   stackPointer := "000";
 		for i in 0 to STACK_SIZE loop
-		  registers(i) := X"0000";		  
+		  registers(i) := X"0000";
 		end loop;
-    elsif(rising_edge(clock)) then  
+    elsif(rising_edge(clock)) then
 		if(wpc='1' and up='0' and down='0') then
-        registers(conv_integer(stackPointer)) := data;		  
+        registers(conv_integer(stackPointer)) := data;
 		elsif(wpc='1' and up='1' and down='0') then
 		  registers(conv_integer(stackPointer)) := registers(conv_integer(stackPointer))+1;
 		  stackPointer := stackPointer+1;
 		  registers(conv_integer(stackPointer)) := data;
       elsif(wpc='0' and up='0' and down='1') then
-		  stackPointer := stackPointer-1;		  
+		  stackPointer := stackPointer-1;
 		else
-        registers(conv_integer(stackPointer)) := registers(conv_integer(stackPointer))+1;
-		end if;
-	 end if;
+      registers(conv_integer(stackPointer)) := registers(conv_integer(stackPointer))+1;
+    end if;
+  end if;
     q <= registers(conv_integer(stackPointer));
-	 
   end process;
-  
-end Behavioral;
 
+end Behavioral;

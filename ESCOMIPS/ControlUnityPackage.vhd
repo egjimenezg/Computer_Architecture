@@ -13,12 +13,12 @@ package ControlUnityPackage is
          greaterThan : out std_logic;
          greaterEqualThan : out std_logic);
   end component;
-  
+
   component Level is
     Port(clock,clear : in std_logic;
          na : out std_logic);
   end component;
-  
+
   component InstructionDecoder is
     Port( opcode : in std_logic_vector(4 downto 0); 
           rType : out std_logic;
@@ -29,17 +29,17 @@ package ControlUnityPackage is
           bGreaterThan : out std_logic;
           bGreaterEqualThan : out std_logic);
   end component;
-  
+
   component FunctionCodeMemory is
     Port(functionCode : in std_logic_vector(3 downto 0);
          microinstruction : out std_logic_vector(19 downto 0));
   end component;
-  
+
   component OpcodeMemory is
     Port(code : in std_logic_vector(4 downto 0);
          instruction : out std_logic_vector(19 downto 0));
   end component;
-  
+
   component ASM is
     Port( clock,clear : in std_logic;
           RTYPE : in std_logic;

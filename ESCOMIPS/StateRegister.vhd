@@ -4,13 +4,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity StateRegister is
   Port( clear,clock : in std_logic;
         lf : in std_logic;
-		  flags_in : std_logic_vector(3 downto 0); -- (3)OV (2)N (1)Z (0)C
-		  equal : out std_logic;
-		  notEqual : out std_logic;
-		  lessThan : out std_logic;
-		  lessEqual : out std_logic;
-		  greaterThan : out std_logic;
-		  greaterEqualThan : out std_logic);
+        flags_in : std_logic_vector(3 downto 0); -- (3)OV (2)N (1)Z (0)C
+        equal : out std_logic;
+        notEqual : out std_logic;
+        lessThan : out std_logic;
+        lessEqual : out std_logic;
+        greaterThan : out std_logic;
+        greaterEqualThan : out std_logic);
 end StateRegister;
 
 architecture Behavioral of StateRegister is
